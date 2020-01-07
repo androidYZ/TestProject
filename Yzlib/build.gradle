@@ -1,0 +1,33 @@
+apply plugin: 'java-library'
+apply plugin: 'java'
+
+jar{
+    //项目名，也是生成的jar的名字
+    baseName = "jj"
+    //项目版本号，这部分内容会写进manifest
+//    version = "1.0"
+    //项目的manifest定义，其中就包含最关键的入口类定义
+    manifest{
+        attributes 'Main-Class': 'com.oneonezz.MyClass'
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //RxJava
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.4'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'//retrofit 库
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'//转换器，请求结果转换成Model
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'//配合Rxjava 使用
+    implementation 'com.google.code.gson:gson:2.8.5'//Gson 库
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"

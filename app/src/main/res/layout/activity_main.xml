@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#FFF"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimationView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/home_page_discovery_tab" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lottie_imageAssetsFolder="images/"
+            app:lottie_fileName="index.json"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            />
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:lottie_imageAssetsFolder="images/"
+            app:lottie_fileName="azvshnaca22.json"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            />
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:lottie_imageAssetsFolder="images/"
+            app:lottie_fileName="gif.json"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            />
+        <ImageView
+            android:id="@+id/img_click"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="start"
+            android:layout_marginTop="200px"
+            android:background="@color/black"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <ImageView
+            android:id="@+id/img_click2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="start"
+            android:layout_marginTop="200px"
+            app:srcCompat="@drawable/ic_00"
+            android:background="#2222"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/move"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_launcher" />
+
+        <com.oneonezz.ui.MyPercentConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:percent="0.4">
+
+            <ImageView
+                android:id="@+id/move2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/login_top" />
+
+            <ImageView
+                android:id="@+id/ad_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/login_top"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </com.oneonezz.ui.MyPercentConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_scale"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/img_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="500px"
+            android:layout_marginTop="200px"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/photo_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/login_top" />
+
+        <com.bm.library.PhotoView
+            android:id="@+id/img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/login_top" />
+
+        <TextView
+            android:id="@+id/hellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="hellow"
+            android:textSize="40sp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
+
+        <com.oneonezz.ui.LineDividerTextView
+            android:id="@+id/dividerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:lineSpacingExtra="8dp"
+            android:text="@string/text1"
+            android:textSize="16sp"
+            app:line_divider="@drawable/login_top"
+            app:line_divider_height="1dp" />
+
+    </LinearLayout>
+</ScrollView>

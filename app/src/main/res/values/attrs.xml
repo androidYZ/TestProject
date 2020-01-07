@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LineDividerTextView">
+        <attr name="line_divider" format="reference" />
+        <attr name="line_divider_height" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="wave">
+        <!-- 波浪颜色 -->
+        <attr name="color" format="color" />
+        <!-- 填充模式 -->
+        <attr name="fill_mode">
+            <!-- 填充0顶部，使顶部是直线，0底部是波浪线 -->
+            <enum name="top" value="1" />
+            <!-- 填充0底部，使底部是直线，0顶部是波浪线 -->
+            <enum name="bottom" value="2" />
+        </attr>
+        <!-- 波浪变化速率，0<0 向右的小伙，>0 向左的效果-->
+        <attr name="speed" format="integer" />
+        <!-- 水波浪初始状态相位角  -->
+        <attr name="phi" format="integer" />
+        <!-- 水波浪角频率，默认0值 1，显示一个0三角函数周期  -->
+        <attr name="omega" format="float" />
+    </declare-styleable>
+
+    <!--文字颜色渐变View-->
+    <declare-styleable name="TextGradientView">
+        <!-- 开始渐变的颜色 -->
+        <attr name="start_color" format="color" />
+        <attr name="end_color" format="color" />
+        <attr name="left_to_right" format="boolean"/>
+        <attr name="top_to_bottom" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="MyPercentConstraintLayout">
+        <attr name="percent" format="float"/>
+    </declare-styleable>
+</resources>

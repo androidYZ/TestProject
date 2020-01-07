@@ -1,0 +1,98 @@
+ViewHoder再次理解:
+
+最终目的:
+	1.ui显示	(ok 可以通过inflate然后add进去)
+	2.数据加载	(提供DataLoader接口让外层在合适的时机调用,或者主动加载,在生命周期结束关闭请求)
+
+
+---------------------------------------------------------------------------
+云豹中的
+/**
+ *  主要:
+ *      1.把父布局通过构造方法传进来,通过getLayoutId把子布局传进来,然后用inflate把子布局填充进去,在需要的时候显示
+ *      2.通过addToParent显示子布局
+ *  其它:
+ *      3.getLifeCycleListener
+ *  工具方法:
+ *      4.findViewById
+ *      5.getContentView
+ *      6.processArguments
+ *      7.canClick
+ */
+
+public abstract class AbsViewHolder {
+
+
+/**
+ * 主要:
+ *      1.生命周期方法回调可以给其它类调用
+ *
+ * 其它:
+ *      1.布局    必须
+ *      2.main方法
+ * 工具方法:
+ *      3.状态栏颜色控制
+ *      4.标题文字设置
+ *      5.返回按钮的点击事件
+ *      6.点击速度是否过快
+ */
+public abstract class AbsActivity extends AppCompatActivity {
+
+
+举例:
+	
+MainHomeViewHolder
+	AbsMainParentViewHolder
+		AbsMainViewHolder
+			AbsViewHolder
+
+AbsViewHolder
+		子View加到父View
+	AbsMainViewHolder		
+			提供空的loadData方法
+		AbsMainParentViewHolder
+				实际调用loadData方法
+				控制TopView的显示隐藏
+				AppBar监听
+			MainHomeViewHolder
+				生命周期监听
+				提供setCurrentPage方法
+
+---------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------
+你有戏中的
+	网络请求使用MVP
+	ui显示用继承实现公用ui
+	显示隐藏控制使用ViewPager和FragmentManager
+---------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------
+方维中
+	网络请求直接封装到工具类(可以切换不同的实现方式)
+	ui和逻辑直接封装到自定义View中
+	显示隐藏直接用工具类的静态方法
+---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

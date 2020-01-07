@@ -1,0 +1,31 @@
+策略模式
+观察者模式
+
+
+类图说明:
+    C 代表是类
+    I 代表是接口
+    A 代表是抽象类
+    属性用类代替
+    方法默认没有返回值
+    "类"之间的关系暂时只用3种:  继承 实现 拥有
+
+
+    策略模式
+        定义:有一系列的算法，将每个算法封装起来（每个算法可以封装到不同的类中），各个算法之间可以替换，策略模式让算法独立于使用它的客户而独立变化。
+            把实现相同功能的方法封装成类,让调用类可以动态替换.
+
+        包含角色:
+            1.Context
+            2.Strategy
+            3.ConcreteStrategy
+
+        类图:
+            Context     C               hasA    Strategy
+                Strategy
+                algorithm();
+                setStrategy(Strategy);
+            Strategy    I
+                algorithm();
+            ConcreteStrategy    C       imp Strategy
+                algorithm();

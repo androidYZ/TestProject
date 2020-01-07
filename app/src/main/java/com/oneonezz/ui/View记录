@@ -1,0 +1,14 @@
+NestedScrolling机制原理解析
+    支持5.0及5.0以上的系统
+    NestedScrolling，简称嵌套滑动，可主要分为NestedScrollingParen和NestedScrollingChild两部分，使用它可以实现一些非常绚丽的效果。
+    Google 帮我们封装好了一些相应的空间，比如 RecyclerView 实现了 NestedScrollingChild 接口，CoordinatorLayout 实现了 NestedScrollingParent 接口等等
+    在传统的事件分发机制 中，一旦某个 View 或者 ViewGroup 消费了事件，就很难将事件交给父 View 进行共同处理。而 NestedScrolling 机制很好地帮助我们解决了这一问题
+
+
+如果是我要实现嵌套滑动应该要怎么样呢?
+    1.子类提供接口
+    2.父类实现接口
+    3.子类把滑动的事件传给父类
+
+实际上是怎么实现的呢?
+    1.提供了4个类 2个接口, 2个helper

@@ -1,0 +1,12 @@
+Android 动画:
+	Android动画分类：
+		视图动画(ViewAnimatior)
+			分类
+				补间动画
+					Translate,scale,rotate,alpha
+				逐帧动画
+					注意:一定不要放大图
+			原理:
+				通过确定开始,结束的视图样式、中间动画变化过程由系统补全来确定一个动画,属性不可用,如颜色
+			使用:XML 代码 / Java 代码里设置
+		属性动画

@@ -1,0 +1,32 @@
+今天工作内容:
+    1.mvp
+    2.原来的逻辑
+
+
+
+
+
+
+
+
+设计模式:
+	1.MVP特点:
+		1.Activity中管生命周期
+
+	与MVC区别:
+		Model (sql json http)													数据
+		View (xml Layout, Java View)											显示
+		Controller (Activity Fragment)											业务逻辑
+	MVP
+		Model (sql json http)													数据
+		View (Activity Fragment)												显示
+		Presenter(只提供 View 与Model的接口) -> 通讯方式都是用接口				业务逻辑
+
+
+
+	代码实现:
+		1.View层提供接口给Presenter调用(实现或者拥有IView)
+			View层拥有IPresenter的实例
+		2.Presenter拥有View层的接口
+			Presenter层拥有Model层的引用
+		3.Model层只写Java代码
