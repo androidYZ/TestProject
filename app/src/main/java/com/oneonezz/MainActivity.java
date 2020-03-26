@@ -33,6 +33,7 @@ import androidx.core.content.ContextCompat;
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.aptannotation.BindView;
 import com.example.aptannotation.RuntimeBind;
+import com.example.aptapi.launcher.AutoBind;
 import com.just.agentweb.PermissionInterceptor;
 import com.oneonezz.jni.JniActivity;
 import com.oneonezz.opengl.GLSurfaceViewActivity;
@@ -84,12 +85,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int PERMISSIONS = 1000;     //请求码
     private ImageView img_click;
 
-    @BindView(value = R.id.img)
-    public ImageView img;
+//    @BindView(value = R.id.img)
+//    public ImageView img;
 
-    @RuntimeBind(value = R.id.hellow)
+//    @BindView(value = R.id.hellow)
     public TextView hellow;
-    private ImageView img_click2;
+    @BindView(value = R.id.img_click2)
+    public ImageView img_click2;
     private LineDividerTextView dividerTextView;
 
     @Override
@@ -128,6 +130,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        AutoBind.getInstance().inject(this);
+
         final LottieAnimationView lottieAnimationView = findViewById(R.id.lottieAnimationView);
         lottieAnimationView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         img_click = (ImageView) findViewById(R.id.img_click);
-        img_click2 = (ImageView) findViewById(R.id.img_click2);
+//        img_click2 = (ImageView) findViewById(R.id.img_click2);
         TextView textView3 = findViewById(R.id.textView3);
 
         findViewById(R.id.move).setOnClickListener(new View.OnClickListener() {
@@ -177,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-//        startActivity(new Intent(MainActivity.this, JniActivity.class));
+        startActivity(new Intent(MainActivity.this, ShortcutActivity.class));
 
 
         System.setProperty("jcifs.smb.client.dfs.disabled", "true");

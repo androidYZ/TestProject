@@ -12,3 +12,11 @@ NestedScrolling机制原理解析
 
 实际上是怎么实现的呢?
     1.提供了4个类 2个接口, 2个helper
+
+
+
+
+ViewGroup
+    步骤
+    1.确定宽高
+    2.onLayout
