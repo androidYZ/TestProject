@@ -15,12 +15,10 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Message;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,11 +30,8 @@ import androidx.core.content.ContextCompat;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.aptannotation.BindView;
-import com.example.aptannotation.RuntimeBind;
 import com.example.aptapi.launcher.AutoBind;
 import com.just.agentweb.PermissionInterceptor;
-import com.oneonezz.jni.JniActivity;
-import com.oneonezz.opengl.GLSurfaceViewActivity;
 import com.oneonezz.three.greendao.AdvertBean;
 import com.oneonezz.three.matisse.GifSizeFilter;
 import com.oneonezz.three.matisse.Glide4Engine;
@@ -52,7 +47,6 @@ import com.zhihu.matisse.filter.Filter;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -88,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //    @BindView(value = R.id.img)
 //    public ImageView img;
 
-//    @BindView(value = R.id.hellow)
+    //    @BindView(value = R.id.hellow)
     public TextView hellow;
     @BindView(value = R.id.img_click2)
     public ImageView img_click2;
@@ -124,12 +118,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean dispatchKeyEvent(KeyEvent event) {
         return super.dispatchKeyEvent(event);
     }
+    
+    public void add(){
+        System.out.println("T.T->add: ");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
+        System.out.println("T.T->onCreate: ");
+        
         AutoBind.getInstance().inject(this);
 
         final LottieAnimationView lottieAnimationView = findViewById(R.id.lottieAnimationView);
@@ -147,7 +147,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         img_click = (ImageView) findViewById(R.id.img_click);
 //        img_click2 = (ImageView) findViewById(R.id.img_click2);
-        TextView textView3 = findViewById(R.id.textView3);
 
         findViewById(R.id.move).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,24 +180,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        startActivity(new Intent(MainActivity.this, ShortcutActivity.class));
-
 
         System.setProperty("jcifs.smb.client.dfs.disabled", "true");
         System.setProperty("jcifs.smb.client.soTimeout", "1000000");
         System.setProperty("jcifs.smb.client.responseTimeout", "30000");
 
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                readRemoteFile3();
 
-//                readRometeFile2();
-//                readRemoteFile();
-//                readFile();
-            }
-        }).start();
     }
 
     private void readFile() {
@@ -401,9 +389,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     };
 
-    public View tt() {
-        Button v = null;
-        return v;
+    public void testOne(){
     }
 
     private void userImageSelect() {
