@@ -1,20 +1,15 @@
 package com.oneonezz;
 
 import android.os.Bundle;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
-
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-
 import com.oneonezz.three.greendao.db.DaoManager;
-import com.oneonezz.three.greendao.db.DaoMaster;
 import com.oneonezz.ui.main.SectionsPagerAdapter;
 
 public class TabActivity extends AppCompatActivity {
@@ -42,6 +37,8 @@ public class TabActivity extends AppCompatActivity {
         DaoManager.getInstance().getDaoSession().getUserPreviewRecordDao().getKey(null);
         
         System.out.println("T.T->onCreate: 2222222222");
+
+        System.out.println("T.T->onCreate: 333333333333");
 
     }
 }
