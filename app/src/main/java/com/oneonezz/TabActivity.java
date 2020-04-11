@@ -41,8 +41,6 @@ public class TabActivity extends AppCompatActivity {
 
         DaoManager.getInstance().getDaoSession().getUserPreviewRecordDao().getKey(null);
         
-        System.out.println("T.T->onCreate: ");
-        
         System.out.println("T.T->onCreate: 2222222222");
 
     }
