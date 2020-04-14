@@ -40,5 +40,7 @@ public class TabActivity extends AppCompatActivity {
 
         System.out.println("T.T->onCreate: 333333333333");
 
+        System.out.println("T.T->onCreate: ReBaseTest1111111111111111");
+
     }
 }
