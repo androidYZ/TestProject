@@ -36,11 +36,7 @@ public class TabActivity extends AppCompatActivity {
 
         DaoManager.getInstance().getDaoSession().getUserPreviewRecordDao().getKey(null);
 
-        System.out.println("T.T->onCreate: master rebase 222222222222222222222");
-
-        System.out.println("T.T->onCreate: Rebase 333333333333333333");
-
-        System.out.println("T.T->onCreate: 444");
+        System.out.println("T.T->onCreate: dev  rebase 11111111111111");
 
         System.out.println("T.T->onCreate: rebase 555555555555");
 
