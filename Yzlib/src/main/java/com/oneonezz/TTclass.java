@@ -27,32 +27,6 @@ public class TTclass {
         mDetectThreadPool.shutdown();
     }
 
-    static class CloneTest implements Cloneable{
-        String msg;
-
-        public CloneTest(String msg) {
-            this.msg = msg;
-        }
-
-        public void setMsg(String msg) {
-            this.msg = msg;
-        }
-
-        public String getMsg() {
-            return msg;
-        }
-
-        @Override
-        protected CloneTest clone() {
-            CloneTest cloneTest = null;
-            try {
-                cloneTest = (CloneTest) super.clone();
-            } catch (CloneNotSupportedException e) {
-                e.printStackTrace();
-            }
-            return cloneTest;
-        }
-    }
 
     private void init() {
         threadLocal.set(true);
