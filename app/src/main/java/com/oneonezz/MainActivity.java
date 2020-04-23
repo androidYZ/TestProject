@@ -28,16 +28,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.airbnb.lottie.LottieAnimationView;
 import com.example.aptannotation.BindView;
 import com.example.aptapi.launcher.AutoBind;
 import com.just.agentweb.PermissionInterceptor;
-import com.oneonezz.three.greendao.AdvertBean;
 import com.oneonezz.three.matisse.GifSizeFilter;
 import com.oneonezz.three.matisse.Glide4Engine;
 import com.oneonezz.ui.LineDividerTextView;
 import com.oneonezz.ui.MoveImageView;
-import com.oneonezz.utils.FileUtils;
 import com.oneonezz.utils.L;
 import com.yuyh.library.imgsel.ISNav;
 import com.yuyh.library.imgsel.config.ISListConfig;
@@ -52,7 +49,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.UnknownHostException;
-import java.util.ArrayList;
 import java.util.List;
 
 import jcifs.UniAddress;
@@ -132,60 +128,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         
         AutoBind.getInstance().inject(this);
 
-        final LottieAnimationView lottieAnimationView = findViewById(R.id.lottieAnimationView);
-        lottieAnimationView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (lottieAnimationView.isAnimating()) {
-                    lottieAnimationView.cancelAnimation();
-                } else {
-                    lottieAnimationView.playAnimation();
-                }
-            }
-        });
-
-
-        img_click = (ImageView) findViewById(R.id.img_click);
-//        img_click2 = (ImageView) findViewById(R.id.img_click2);
-
-        findViewById(R.id.move).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FileUtils.readObjectFromFile("object");
-
-            }
-        });
-
-        img_click2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                AdvertBean aBean = new AdvertBean();
-                List<AdvertBean.AdvertTypeBean> temp = new ArrayList<>();
-                AdvertBean.AdvertTypeBean typeBean = new AdvertBean.AdvertTypeBean();
-                typeBean.setIs_usermsg("123");
-                temp.add(typeBean);
-
-                AdvertBean.AdvertTypeBean typeBean1 = new AdvertBean.AdvertTypeBean();
-                typeBean1.setIs_usermsg("000");
-                temp.add(typeBean1);
-//                aBean.setInfo(temp);
-                FileUtils.writeObjectToFile("object", temp);
-            }
-        });
-
-        img_click.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FileUtils.readObjectFromFile("object");
-            }
-        });
-
-
-        System.setProperty("jcifs.smb.client.dfs.disabled", "true");
-        System.setProperty("jcifs.smb.client.soTimeout", "1000000");
-        System.setProperty("jcifs.smb.client.responseTimeout", "30000");
-
-
+        startActivity(new Intent(this, IndicatorActivity.class));
 
     }
 

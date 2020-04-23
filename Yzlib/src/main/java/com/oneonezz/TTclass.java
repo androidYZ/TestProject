@@ -1,5 +1,8 @@
 package com.oneonezz;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * Created by ${Justin} on 2019/10/28.
  */
@@ -8,10 +11,20 @@ public class TTclass {
     private ThreadLocal<Boolean> threadLocal = new ThreadLocal<>();
 
     public static void main(String[] args) {
-        CloneTest ct = new CloneTest("Hello");
-        CloneTest ct2 = ct.clone();
-        ct2.setMsg("Hi");
-        System.out.println("NiYouXi->main: "+ct.getMsg()+"  ct2 = "+ct2.getMsg());
+        ExecutorService mDetectThreadPool = Executors.newFixedThreadPool(1);
+        mDetectThreadPool.submit(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("T.T->run: ---------------");
+            }
+        });
+        System.out.println("T.T->main: ");
+        mDetectThreadPool.shutdown();
     }
 
     static class CloneTest implements Cloneable{

@@ -7,8 +7,6 @@ import java.io.File;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -20,14 +18,7 @@ import javax.xml.transform.stream.StreamResult;
 
 public class MyClass {
     public static void main(String[] args) {
-        System.out.println("NiYouXi->main: start");
-//        traverseFolder2("D:\\work_doc\\奇缘\\奇缘安切");
-//        createXml();
-        renameFolder("D:\\workspace_as\\FunDo");
-
-
-
-        System.out.println("NiYouXi->main: end");
+        System.out.println("T.T->main: ");
     }
 
     public static void generateXML() {
