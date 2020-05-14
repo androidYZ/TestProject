@@ -1,0 +1,18 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    ////如果需要支持API21 或者 java7 需改为3.12.x, 比如3.12.0
+    implementation"com.squareup.okhttp3:okhttp:3.14.2"
+    compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+    compile 'com.qcloud:qcloud-image-sdk:2.3.6'
+}
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"

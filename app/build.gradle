@@ -46,6 +46,29 @@ android {
         targetGenDir 'src/main/java'//设置DaoMaster、DaoSession、Dao目录
     }
     sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/drawable-hdpi'] } }
+
+    //修改生成的apk文件名及路径
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            //判断是release还是debug版本
+            def buildType = variant.buildType.name
+            //获取当前时间的"YYYY-MM-dd"格式。
+            def createTime = new Date().format("yyyy-MM-dd kk-mm-ss", TimeZone.getTimeZone("GMT+08:00"))
+            //只对Release包起作用，如果不是Release包则不变更输出路径，否则可能导致AS无法自动安装debug包。
+            if (buildType == "release") {
+                variant.getPackageApplication().outputDirectory = new File("D:\\0000\\AllAppOutput")
+//                variant.getPackageApplication().outputDirectory = new File("\\\\X7N6OT32A969897\\AllAppOutput")
+                variant.outputs.each {
+                    if (buildType == "release") {
+                        //我此处的命名规则是：渠道名_项目名_版本名_创建时间_构建类型.apk
+                        def fileName = "${project.getRootDir().getName()}_${defaultConfig.versionName}_${createTime}-${buildType}.apk"
+                        it.outputFileName = fileName
+                    }
+                }
+
+            }
+        }
+    }
 }
 
 
@@ -61,8 +84,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation 'com.zhihu.android:matisse:0.5.2-beta5'
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     implementation 'pub.devrel:easypermissions:2.0.1'
 
@@ -107,6 +130,4 @@ dependencies {
     implementation group: 'jcifs', name: 'jcifs', version: '1.3.17'
 
     implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
-
-
 }
