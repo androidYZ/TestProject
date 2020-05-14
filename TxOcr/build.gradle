@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation files('libs/gson-2.2.4.jar')
+    implementation files('libs/okhttp-2.5.0.jar')
+    implementation files('libs/okio-1.6.0.jar')
+    implementation files('thumbnailator-0.4.11.jar')
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+
+sourceCompatibility = "7"
+targetCompatibility = "7"

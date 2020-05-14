@@ -1,1 +1,1 @@
-include ':app', ':Yzlib', ':AptAnnotation', ':AptApi', ':mylibrary', ':androidlig'
+include ':app', ':Yzlib', ':AptAnnotation', ':AptApi', ':mylibrary', ':androidlig', ':HttpLib', ':lib'
