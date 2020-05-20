@@ -57,13 +57,17 @@ public class OcrUse {
 
         /** 重命名 */
 //        String tt = "恬0.png";
-//        System.out.println("T.T->main: "+tt.length() + tt.replace("0",""));
-//        traverseFolder("C:\\Users\\Administrator\\Desktop\\22_temp2", new OnTraverse() {
+//        System.out.println("T.T->main: " + tt.length() + tt.replace("0", ""));
+//        traverseFolder("D:\\work_git\\FindWord\\app\\src\\main\\assets\\tyz", new OnTraverse() {
 //            @Override
 //            public void onTraverse(File file) {
 //                file.renameTo(new File(file.getParent(), file.getName().replace("0","")));
+//                if (file.getName().length > 5) {
+//                    System.out.println("T.T->onTraverse: "+ file.getName());
+//                }
 //            }
 //        });
+//        System.out.println("T.T->main: end");
 
 
         /** 裁剪图片 */
