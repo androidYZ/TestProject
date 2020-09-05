@@ -129,6 +129,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AutoBind.getInstance().inject(this);
 
         startActivity(new Intent(this, IndicatorActivity.class));
+        
+        Toast.makeText(MainActivity.this,"11",Toast.LENGTH_LONG).show();
 
     }
 
